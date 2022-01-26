@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{21F6E99B-82E6-4CB5-B241-1E6D6F7E73EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulDeSacServicesOrchestration.Api", "src\CulDeSacServicesOrchestration.Api\CulDeSacServicesOrchestration.Api.csproj", "{4DC70DC3-4217-47C1-A7D7-9333A93BB99D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulDeSacServicesOrchestration.Core", "src\CulDeSacServicesOrchestration.Core\CulDeSacServicesOrchestration.Core.csproj", "{D149CBC6-92C3-4CA8-A659-BDB7E6E3E49C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulDeSacServicesOrchestration.Infrastructure", "src\CulDeSacServicesOrchestration.Infrastructure\CulDeSacServicesOrchestration.Infrastructure.csproj", "{2D52AC5F-FD91-401B-B354-4666406BF87B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3304F07B-D741-4CE3-AC34-9F68DC437F92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulDeSacServicesOrchestration.UnitTests", "tests\CulDeSacServicesOrchestration.UnitTests\CulDeSacServicesOrchestration.UnitTests.csproj", "{CC014373-87B5-41B9-8A18-C6F5C682826C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulDeSacServicesOrchestration.IntegrationTests", "tests\CulDeSacServicesOrchestration.IntegrationTests\CulDeSacServicesOrchestration.IntegrationTests.csproj", "{75C8839E-784B-4882-9733-553A445177F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DC70DC3-4217-47C1-A7D7-9333A93BB99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC70DC3-4217-47C1-A7D7-9333A93BB99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC70DC3-4217-47C1-A7D7-9333A93BB99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC70DC3-4217-47C1-A7D7-9333A93BB99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D149CBC6-92C3-4CA8-A659-BDB7E6E3E49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D149CBC6-92C3-4CA8-A659-BDB7E6E3E49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D149CBC6-92C3-4CA8-A659-BDB7E6E3E49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D149CBC6-92C3-4CA8-A659-BDB7E6E3E49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D52AC5F-FD91-401B-B354-4666406BF87B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D52AC5F-FD91-401B-B354-4666406BF87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D52AC5F-FD91-401B-B354-4666406BF87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D52AC5F-FD91-401B-B354-4666406BF87B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC014373-87B5-41B9-8A18-C6F5C682826C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC014373-87B5-41B9-8A18-C6F5C682826C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC014373-87B5-41B9-8A18-C6F5C682826C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC014373-87B5-41B9-8A18-C6F5C682826C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C8839E-784B-4882-9733-553A445177F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C8839E-784B-4882-9733-553A445177F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C8839E-784B-4882-9733-553A445177F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C8839E-784B-4882-9733-553A445177F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DC70DC3-4217-47C1-A7D7-9333A93BB99D} = {21F6E99B-82E6-4CB5-B241-1E6D6F7E73EA}
+		{D149CBC6-92C3-4CA8-A659-BDB7E6E3E49C} = {21F6E99B-82E6-4CB5-B241-1E6D6F7E73EA}
+		{2D52AC5F-FD91-401B-B354-4666406BF87B} = {21F6E99B-82E6-4CB5-B241-1E6D6F7E73EA}
+		{CC014373-87B5-41B9-8A18-C6F5C682826C} = {3304F07B-D741-4CE3-AC34-9F68DC437F92}
+		{75C8839E-784B-4882-9733-553A445177F1} = {3304F07B-D741-4CE3-AC34-9F68DC437F92}
+	EndGlobalSection
+EndGlobal

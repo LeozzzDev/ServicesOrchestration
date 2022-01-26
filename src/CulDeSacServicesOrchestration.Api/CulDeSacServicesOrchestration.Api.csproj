@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.azure.servicebus" Version="5.2.0" />
+    <PackageReference Include="microsoft.entityframeworkcore.design" Version="6.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="6.0.1" />
+    <PackageReference Include="microsoft.entityframeworkcore.tools" Version="6.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="restfulsense" Version="2.4.0" />
+    <PackageReference Include="serilog.aspnetcore" Version="4.1.0" />
+    <PackageReference Include="serilog.sinks.console" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CulDeSacServicesOrchestration.Core\CulDeSacServicesOrchestration.Core.csproj" />
+    <ProjectReference Include="..\CulDeSacServicesOrchestration.Infrastructure\CulDeSacServicesOrchestration.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

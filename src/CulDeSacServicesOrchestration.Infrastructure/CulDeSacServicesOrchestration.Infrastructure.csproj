@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\CulDeSacServicesOrchestration.Core\CulDeSacServicesOrchestration.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="efxceptions" Version="0.4.5" />
+    <PackageReference Include="microsoft.azure.servicebus" Version="5.2.0" />
+    <PackageReference Include="microsoft.entityframeworkcore.design" Version="6.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="6.0.1" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver.design" Version="1.1.6" />
+    <PackageReference Include="microsoft.entityframeworkcore.tools" Version="6.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
