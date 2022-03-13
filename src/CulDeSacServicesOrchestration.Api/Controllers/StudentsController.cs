@@ -9,9 +9,9 @@ namespace CulDeSacServicesOrchestration.Api.Controllers;
 [Route("api/students")]
 public class StudentsController : RESTFulController
 {
-    private readonly IStudentsService? studentsService;
+    private readonly IStudentsService studentsService;
 
-    public StudentsController(IStudentsService? studentsService)
+    public StudentsController(IStudentsService studentsService)
     {
         this.studentsService = studentsService;
     }

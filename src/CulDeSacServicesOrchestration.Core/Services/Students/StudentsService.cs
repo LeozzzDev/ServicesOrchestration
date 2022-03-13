@@ -5,9 +5,9 @@ namespace CulDeSacServicesOrchestration.Core.Services.Students;
 
 public class StudentsService : IStudentsService
 {
-    private readonly IDatabaseStudentsBroker? databaseStudentsBroker;
+    private readonly IDatabaseStudentsBroker databaseStudentsBroker;
 
-    public StudentsService(IDatabaseStudentsBroker? databaseStudentsBroker)
+    public StudentsService(IDatabaseStudentsBroker databaseStudentsBroker)
     {
         this.databaseStudentsBroker = databaseStudentsBroker;
     }

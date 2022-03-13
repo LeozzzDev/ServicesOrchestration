@@ -4,9 +4,9 @@ namespace CulDeSacServicesOrchestration.Core.Services.Logging;
 
 public class LoggerService : ILoggerService
 {
-    private readonly ILogger? logger;
+    private readonly ILogger logger;
 
-    public LoggerService(ILogger? logger)
+    public LoggerService(ILogger logger)
     {
         this.logger = logger;
     }

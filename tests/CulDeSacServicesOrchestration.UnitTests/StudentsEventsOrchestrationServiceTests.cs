@@ -15,8 +15,8 @@ namespace CulDeSacServicesOrchestration.UnitTests;
 
 public class StudentsEventsOrchestrationServiceTests
 {
-     private readonly Mock<IStudentsService>? studentsServiceMock;
-    private readonly Mock<IStudentsEventsService>? studentsEventsServiceMock;
+     private readonly Mock<IStudentsService> studentsServiceMock;
+    private readonly Mock<IStudentsEventsService> studentsEventsServiceMock;
     private readonly IStudentsEventsOrchestrationService studentsEventsOrchestrationService;
 
     public StudentsEventsOrchestrationServiceTests()
@@ -33,25 +33,25 @@ public class StudentsEventsOrchestrationServiceTests
     }
 
     [Fact]
-    public async Task ShouldListenToStudentsEventsAndRegisterStudent()
+    public void ShouldListenToStudentsEventsAndRegisterStudent()
     {
         Student incomingStudent = GetRandomStudent();
 
-        studentsEventsServiceMock?.Setup(eventsService =>
+        studentsEventsServiceMock.Setup(eventsService =>
             eventsService.ListenToStudentsEvents(It.IsAny<Func<Student, ValueTask>>()))
                 .Callback<Func<Student, ValueTask>>(eventFunction =>
                     eventFunction.Invoke(incomingStudent));
         
         studentsEventsOrchestrationService.ListenToStudentsEvents();
 
-        studentsEventsServiceMock?.Verify(eventsService =>
+        studentsEventsServiceMock.Verify(eventsService =>
             eventsService.ListenToStudentsEvents(It.IsAny<Func<Student, ValueTask>>()), Times.Once());
 
-        studentsServiceMock?.Verify(service =>
+        studentsServiceMock.Verify(service =>
             service.RegisterStudentAsync(incomingStudent), Times.Once());
 
-        studentsEventsServiceMock?.VerifyNoOtherCalls();
-        studentsServiceMock?.VerifyNoOtherCalls();   
+        studentsEventsServiceMock.VerifyNoOtherCalls();
+        studentsServiceMock.VerifyNoOtherCalls();   
     }
 
     private Message GetStudentMessage(Student student)

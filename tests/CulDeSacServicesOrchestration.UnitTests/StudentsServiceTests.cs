@@ -12,8 +12,8 @@ namespace CulDeSacServicesOrchestration.UnitTests;
 
 public class StudentsServiceTests
 {
-    private readonly Mock<IDatabaseStudentsBroker>? databaseStudentsBrokerMock;
-    private readonly IStudentsService? studentsService;
+    private readonly Mock<IDatabaseStudentsBroker> databaseStudentsBrokerMock;
+    private readonly IStudentsService studentsService;
 
     public StudentsServiceTests()
     {
@@ -29,7 +29,7 @@ public class StudentsServiceTests
         Student student = GetRandomStudent();
         Student expectedStudent = student.DeepClone();
 
-        databaseStudentsBrokerMock?.Setup(broker =>
+        databaseStudentsBrokerMock.Setup(broker =>
             broker.InsertStudentAsync(student))
                 .ReturnsAsync(expectedStudent);
 
@@ -39,10 +39,10 @@ public class StudentsServiceTests
         returnedStudent.Should().
             BeEquivalentTo(expectedStudent);
 
-        databaseStudentsBrokerMock?.Verify(broker =>
+        databaseStudentsBrokerMock.Verify(broker =>
             broker.InsertStudentAsync(student), Times.Once());
 
-        databaseStudentsBrokerMock?.VerifyNoOtherCalls();
+        databaseStudentsBrokerMock.VerifyNoOtherCalls();
     }
 
     private Student GetRandomStudent()

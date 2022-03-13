@@ -17,8 +17,8 @@ namespace CulDeSacServicesOrchestration.UnitTests;
 
 public class StudentsEventsServiceTests
 {
-    private readonly Mock<IQueueBroker>? queueBrokerMock;
-    private readonly IStudentsEventsService? studentsEventsService;
+    private readonly Mock<IQueueBroker> queueBrokerMock;
+    private readonly IStudentsEventsService studentsEventsService;
     private readonly ICompareLogic compareLogic;
 
     public StudentsEventsServiceTests()
@@ -29,33 +29,33 @@ public class StudentsEventsServiceTests
     }
 
     [Fact]
-    public async Task ShouldListenToStudentsEvents()
+    public void ShouldListenToStudentsEvents()
     {
         var studentEventHandlerMock = new Mock<Func<Student, ValueTask>>();
         Student incomingStudent = GetRandomStudent();
         Message incomingStudentQueueMessage = GetStudentMessage(incomingStudent);
 
-        queueBrokerMock?.Setup(queueBroker =>
+        queueBrokerMock.Setup(queueBroker =>
             queueBroker.ListenToStudentsQueue(
                 It.IsAny<Func<Message, CancellationToken, Task>>())
-                    ).Callback<Func<Message, CancellationToken, Task>>(eventFunction => 
+                    ).Callback<Func<Message, CancellationToken, Task>>(eventFunction =>
                         eventFunction.Invoke(incomingStudentQueueMessage, It.IsAny<CancellationToken>()));
 
-        studentsEventsService?.ListenToStudentsEvents(studentEventHandlerMock.Object);
+        studentsEventsService.ListenToStudentsEvents(studentEventHandlerMock.Object);
 
         studentEventHandlerMock.Verify(handler =>
             handler.Invoke(It.Is(SameStudentAs(incomingStudent))), Times.Once);
-        
-        queueBrokerMock?.Verify(queueBroker =>
+
+        queueBrokerMock.Verify(queueBroker =>
             queueBroker.ListenToStudentsQueue(
                     It.IsAny<Func<Message, CancellationToken, Task>>()), Times.Once());
-        
-        queueBrokerMock?.VerifyNoOtherCalls();
+
+        queueBrokerMock.VerifyNoOtherCalls();
     }
 
     private Expression<Func<Student, bool>> SameStudentAs(Student expectedStudent)
     {
-        return actualStudent => 
+        return actualStudent =>
             compareLogic.Compare(expectedStudent, actualStudent).AreEqual;
     }
 
